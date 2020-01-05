@@ -12,3 +12,5 @@ Se envian al Servidor con PUSH
 
 Los syncronizaciones del servidor se leen con PULL
 Los conflictos ... se resuelven con diff
+
+modificacion 123
