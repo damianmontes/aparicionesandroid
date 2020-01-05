@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://6.dae" type="PackedScene" id=1]
+[ext_resource path="res://player1.gd" type="Script" id=2]
+[ext_resource path="res://texturas/oxido_rojo.jpg" type="Texture" id=3]
+[ext_resource path="res://KinematicBody.gd" type="Script" id=4]
+
+[sub_resource type="PlaneMesh" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="BoxShape" id=10]
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "quieto_parado"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "quieto_parado"
+
+[sub_resource type="AnimationNodeBlend2" id=6]
+filters = [ "KinematicBody/Cube/vacio", "KinematicBody/Cube/vacio/Skeleton:Bone" ]
+
+[sub_resource type="AnimationNodeBlendTree" id=7]
+graph_offset = Vector2( 0, 48.75 )
+nodes/Animation/node = SubResource( 5 )
+nodes/Animation/position = Vector2( 20, 160 )
+"nodes/Animation 2/node" = SubResource( 4 )
+"nodes/Animation 2/position" = Vector2( 20, 260 )
+nodes/Blend2/node = SubResource( 6 )
+nodes/Blend2/position = Vector2( 340, 140 )
+nodes/output/position = Vector2( 620, 120 )
+node_connections = [ "output", 0, "Blend2", "Blend2", 0, "Animation", "Blend2", 1, "Animation 2" ]
+
+[node name="Scene Root" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="piso" type="MeshInstance" parent="." index="0"]
+transform = Transform( 13.2114, 0, 0, 0, 1, 0, 0, 0, 15.6567, 0.420839, 0, 0.401478 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="KinematicBody" type="KinematicBody" parent="." index="1"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.481514, 1.42059, 0.437655 )
+shape = SubResource( 10 )
+
+[node name="Camera" type="Camera" parent="Cube/Armature/Skeleton" index="0"]
+transform = Transform( 0.758662, -0.135876, 0.101195, 0.138977, 0.764673, -0.0151756, -0.0968922, 0.0329028, 0.770584, -0.363203, 2.29317, -0.0658331 )
+fov = 49.1343
+near = 1e-006
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" index="0"]
+tree_root = SubResource( 7 )
+anim_player = NodePath("..")
+parameters/Blend2/blend_amount = 1.0
+
