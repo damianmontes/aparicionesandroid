@@ -5,3 +5,10 @@ mis nuevos cambios a la fuente del programa
 
 este cambio lo es desde el servidor
 para syncronizar en el pc
+
+Los cambios se empaquetan con COMMIT
+Se envian al Servidor con PUSH
+
+
+Los syncronizaciones del servidor se leen con PULL
+Los conflictos ... se resuelven con diff
