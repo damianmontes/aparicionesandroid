@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="player1"
-run/main_scene="res://player1.tscn"
+run/main_scene="res://escenario.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -44,4 +44,7 @@ rotar_izq={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
+quality/shadows/filter_mode=0
+quality/filters/use_nearest_mipmap_filter=true
 environment/default_environment="res://default_env.tres"
