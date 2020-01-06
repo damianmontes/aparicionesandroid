@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Cristal-03.jpg-20e357b6f70934ef73b97ce77e9a1941.s3tc.stex"
-path.etc2="res://.import/Cristal-03.jpg-20e357b6f70934ef73b97ce77e9a1941.etc2.stex"
+path.s3tc="res://.import/Cristal-03.jpg-333679bae7aec716ced3caa49addcc23.s3tc.stex"
+path.etc2="res://.import/Cristal-03.jpg-333679bae7aec716ced3caa49addcc23.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://pantano/images/Cristal-03.jpg"
-dest_files=[ "res://.import/Cristal-03.jpg-20e357b6f70934ef73b97ce77e9a1941.s3tc.stex", "res://.import/Cristal-03.jpg-20e357b6f70934ef73b97ce77e9a1941.etc2.stex" ]
+source_file="res://niveles/pantano/images/Cristal-03.jpg"
+dest_files=[ "res://.import/Cristal-03.jpg-333679bae7aec716ced3caa49addcc23.s3tc.stex", "res://.import/Cristal-03.jpg-333679bae7aec716ced3caa49addcc23.etc2.stex" ]
 
 [params]
 

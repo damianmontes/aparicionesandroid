@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ESCENA_PSX_1.obj-ff15a495b7a2d698a4900c09cbb9d397.mesh"
+
+[deps]
+
+files=[ "res://.import/ESCENA_PSX_1.obj-ff15a495b7a2d698a4900c09cbb9d397.mesh" ]
+
+source_file="res://niveles/meshObj/ESCENA_PSX_1.obj"
+dest_files=[ "res://.import/ESCENA_PSX_1.obj-ff15a495b7a2d698a4900c09cbb9d397.mesh", "res://.import/ESCENA_PSX_1.obj-ff15a495b7a2d698a4900c09cbb9d397.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/caverna1b.png-0e915fc5bae3d917c87e3dbe87ad6826.s3tc.stex"
-path.etc2="res://.import/caverna1b.png-0e915fc5bae3d917c87e3dbe87ad6826.etc2.stex"
+path.s3tc="res://.import/TexLobo.png-52470ab07d5e6d891f33d74c35906950.s3tc.stex"
+path.etc2="res://.import/TexLobo.png-52470ab07d5e6d891f33d74c35906950.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://pantano/images/caverna1b.png"
-dest_files=[ "res://.import/caverna1b.png-0e915fc5bae3d917c87e3dbe87ad6826.s3tc.stex", "res://.import/caverna1b.png-0e915fc5bae3d917c87e3dbe87ad6826.etc2.stex" ]
+source_file="res://niveles/enemigos/hombreLobo/images/TexLobo.png"
+dest_files=[ "res://.import/TexLobo.png-52470ab07d5e6d891f33d74c35906950.s3tc.stex", "res://.import/TexLobo.png-52470ab07d5e6d891f33d74c35906950.etc2.stex" ]
 
 [params]
 

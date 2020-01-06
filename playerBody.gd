@@ -41,4 +41,6 @@ func _physics_process(delta):
 	if($animCamera.get_current_animation() != accion):
 		$animCamera.play(accion, 0.25)
 		#print('animacion: ', accion)
+		
+		
 	pass
