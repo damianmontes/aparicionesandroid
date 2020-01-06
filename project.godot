@@ -15,9 +15,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="player1"
+config/name="Apariciones"
 run/main_scene="res://escenario.tscn"
-config/icon="res://icon.png"
+config/icon="res://AlienLogo.png"
+
+[display]
+
+window/size/width=800
+window/size/height=480
 
 [input]
 
@@ -46,5 +51,6 @@ rotar_izq={
 
 quality/driver/driver_name="GLES2"
 quality/shadows/filter_mode=0
+quality/shading/force_vertex_shading=true
 quality/filters/use_nearest_mipmap_filter=true
 environment/default_environment="res://default_env.tres"

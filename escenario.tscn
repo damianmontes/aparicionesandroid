@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://materials/matArenizca.material" type="Material" id=1]
-[ext_resource path="res://playerBody.gd" type="Script" id=2]
+[ext_resource path="res://materials/fierroOxidado.material" type="Material" id=2]
+[ext_resource path="res://playerBody.gd" type="Script" id=3]
 
 [sub_resource type="PlaneMesh" id=1]
 material = ExtResource( 1 )
@@ -10,26 +11,64 @@ size = Vector2( 4, 4 )
 [sub_resource type="ConcavePolygonShape" id=2]
 data = PoolVector3Array( 2, 0, 2, -2, 0, 2, 2, 0, -2, -2, 0, 2, -2, 0, -2, 2, 0, -2 )
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.45098, 0.796078, 0.27451, 1 )
+[sub_resource type="CylinderMesh" id=3]
+material = ExtResource( 2 )
+height = 10.0
+radial_segments = 32
 
-[sub_resource type="CapsuleMesh" id=4]
-material = SubResource( 3 )
-mid_height = 2.0
-
-[sub_resource type="CubeMesh" id=5]
-size = Vector3( 1.5, 1, 0.6 )
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0.203922, 0.462745, 0.960784, 1 )
-
-[sub_resource type="CapsuleShape" id=7]
+[sub_resource type="CapsuleShape" id=4]
 radius = 1.02436
 height = 2.0564
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.45098, 0.796078, 0.27451, 1 )
+
+[sub_resource type="CapsuleMesh" id=6]
+material = SubResource( 5 )
+mid_height = 2.0
+
+[sub_resource type="CubeMesh" id=7]
+size = Vector3( 1.5, 1, 0.6 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.203922, 0.462745, 0.960784, 1 )
+
+[sub_resource type="Animation" id=9]
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.554651, 0.781831, 1.27131 ), Vector3( 0, 0.53971, 1.27131 ), Vector3( 0.555, 0.782, 1.271 ), Vector3( 0, 0.53971, 1.27131 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.208173, 0.53971, 1.27131 ), Vector3( 0, 0.53971, 1.27131 ), Vector3( 0.208, 0.54, 1.271 ), Vector3( 0, 0.53971, 1.27131 ), Vector3( -0.208173, 0.53971, 1.27131 ) ]
+}
 
 [node name="escenario" type="Spatial"]
 
 [node name="meshPiso" type="MeshInstance" parent="."]
+editor/display_folded = true
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
@@ -39,31 +78,81 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="meshPiso/StaticBody"]
 shape = SubResource( 2 )
 
+[node name="meshPilar" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6686, 4.90001, 12.1127 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="meshPilar2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6686, 4.90001, 5.11269 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="meshPilar3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6686, 4.90001, -4.88731 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="meshPilar4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6686, 4.90001, -11.8873 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="meshPilar5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33136, 4.90001, -11.8873 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="meshPilar6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33136, 4.90001, -4.88731 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="meshPilar7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33136, 4.90001, 5.11269 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="meshPilar8" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33136, 4.90001, 12.1127 )
+mesh = SubResource( 3 )
+material/0 = null
+
 [node name="playerBody" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.14258, 0 )
-script = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="playerBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
+shape = SubResource( 4 )
 
 [node name="meshPersonaje" type="MeshInstance" parent="playerBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
-mesh = SubResource( 4 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="playerBody/meshPersonaje"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.655348, 0.664104 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 6 )
-
-[node name="CollisionShape" type="CollisionShape" parent="playerBody"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
-shape = SubResource( 7 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
 
 [node name="Position3D_Back" type="Position3D" parent="playerBody"]
 transform = Transform( -1, -3.03158e-008, 8.19982e-008, 0, 0.937949, 0.346772, -8.74228e-008, 0.346772, -0.937949, 0, 5.0841, -14.1984 )
+
+[node name="Camera" type="Camera" parent="playerBody"]
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, -0.554651, 0.781831, 1.27131 )
+current = true
+
+[node name="animCamera" type="AnimationPlayer" parent="playerBody"]
+autoplay = "caminar"
+anims/caminar = SubResource( 9 )
+anims/esperando = SubResource( 10 )
 
 [node name="Node" type="Node" parent="."]
 
 [node name="Camera" type="InterpolatedCamera" parent="Node"]
 transform = Transform( -1, -3.03158e-008, 8.19982e-008, 0, 0.937949, 0.346772, -8.74228e-008, 0.346772, -0.937949, 0, 7.22668, -14.1984 )
+visible = false
 target = NodePath("../../playerBody/Position3D_Back")
 speed = 1.5
 enabled = true
