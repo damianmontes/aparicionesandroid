@@ -166,4 +166,3 @@ enabled = true
 
 [node name="hombreLobo" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.556 )
-

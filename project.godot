@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Apariciones"
-run/main_scene="res://escenario.tscn"
+run/main_scene="res://niveles/StreetEnv.tscn"
 config/icon="res://AlienLogo.png"
 
 [display]
