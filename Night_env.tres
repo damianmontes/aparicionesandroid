@@ -16,4 +16,7 @@ background_sky = SubResource( 1 )
 background_color = Color( 0.054902, 0.407843, 0.435294, 1 )
 ambient_light_color = Color( 0.611765, 0.929412, 0.968627, 1 )
 ambient_light_sky_contribution = 0.34
-
+fog_enabled = true
+fog_depth_begin = 5.0
+fog_depth_end = 186.0
+fog_height_enabled = true
